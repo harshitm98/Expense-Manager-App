@@ -1,9 +1,11 @@
+import 'package:expense_app/widgets/user_transaction.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import './models/transaction.dart';
 import './widgets/transaction_list.dart';
+import 'package:expense_app/widgets/new_transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,31 +41,7 @@ final amountController = TextEditingController();
               child: Text("Chart"),
             ),
           ),
-          Card(
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(labelText: "Title"),
-                    controller: titleController,
-                  ),
-                  TextField(
-                    decoration: InputDecoration(labelText: "Amount"),
-                    controller: amountController,
-                  ),
-                  FlatButton(
-                    child: Text("Add transaction"),
-                    onPressed: () {
-                      
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-          TransactionList(),
+          UserTransaction(),
         ],
       ),
     );
