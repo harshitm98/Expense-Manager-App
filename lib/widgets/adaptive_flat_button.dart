@@ -11,20 +11,20 @@ class AdaptiveFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Platform.isIOS
-                        ? CupertinoButton(
-                          child: Text(
-                              "Choose Date",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            onPressed: _presentDatePicker,
-                        )
-                        : FlatButton(
-                            textColor: Theme.of(context).primaryColor,
-                            child: Text(
-                              "Choose Date",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            onPressed: _presentDatePicker,
-                          )
+        ? CupertinoButton(
+            child: Text(
+              "Choose Date",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            onPressed: _presentDatePicker,
+          )
+        : FlatButton(
+            textColor: Theme.of(context).primaryColor,
+            child: Text(
+              "Choose Date",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            onPressed: _presentDatePicker,
+          );
   }
 }
